@@ -1,4 +1,4 @@
-// 
+@import "solid.scss";
 $ff-fantasy: Impact, fantasy;
 $ff-handwriting: 'Brush Script MT', cursive;
 $ff-comic: Comic Sans MS, Comic Sans, cursive;
@@ -96,6 +96,8 @@ div {
 }
 
 .summary {
+    
+    @extend .fas;
     max-width: 800px;
     a::after {
         font-family: 'Font Awesome 5 Free';
