@@ -1,12 +1,15 @@
+// 
+$ff-fantasy: Impact, fantasy;
+$ff-handwriting: 'Brush Script MT', cursive;
+$ff-comic: Comic Sans MS, Comic Sans, cursive;
+$clr-bg: hsl(240, 6%, 95%);
+$clr-obj-primary: hsl(264, 18%, 73%);
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-$clr-bg: hsl(240, 6%, 95%);
-$ff-fantasy: Impact, fantasy;
-$ff-handwriting: 'Brush Script MT', cursive;
 body {
     background-color: $clr-bg;
 }
@@ -20,7 +23,7 @@ h1 {
 
 h1::before{
     content: "";
-    background-color: hsl(264, 18%, 73%);
+    background-color: $clr-obj-primary;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -29,10 +32,100 @@ h1::before{
 }
 h1::after{
     content: "";
-    background-color: hsl(264, 18%, 73%);
+    background-color: $clr-obj-primary;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     width: calc(50% - 4em); 
+}
+h2, h3{
+    font-family: $ff-handwriting;
+    text-align: center;
+    position: relative;
+}
+h2 {
+    font-size: 2em;
+}
+h2::before, h2::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    width: 25px;
+    background-color: $clr-obj-primary;
+    border-radius: 50%;
+}
+h2::before {
+    left: calc(50% - 6em);
+}
+h2::after {
+    right: calc(50% - 6em);
+}
+h3{
+    font-size: 1.5em;
+}
+h3::before, h3::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    width: 25px;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid $clr-obj-primary;
+}
+h3::before {
+    left: calc(50% - 7em);
+}
+h3::after {
+    right: calc(50% - 7em);
+}
+
+.participation, .benefits, .requirements, .sidebar{
+
+    h3::before {
+        left: calc(50% - 5em);
+    }
+    h3::after {
+        right: calc(50% - 5em);
+    }
+}
+div {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.summary {
+    max-width: 800px;
+    a::after {
+        font-family: 'Font Awesome 5 Free';
+        content: ' \f019';
+        font-weight: 900;
+        
+    }
+}
+
+p {
+    font-family: $ff-comic;
+    
+}
+a[href^="http"]::after {
+    font-family: 'Font Awesome 5 Free';
+    content: ' \f35d';
+    font-weight: 900;
+    
+}
+
+
+
+@media screen and (max-width: 390px) {
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1em;
+    }
+    p {
+        font-size: .7em;
+    }
 }

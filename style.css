@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -33,6 +34,101 @@ h1::after {
   bottom: 0;
   right: 0;
   width: calc(50% - 4em);
+}
+
+h2, h3 {
+  font-family: "Brush Script MT", cursive;
+  text-align: center;
+  position: relative;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h2::before, h2::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  width: 25px;
+  background-color: #b8aec7;
+  border-radius: 50%;
+}
+
+h2::before {
+  left: calc(50% - 6em);
+}
+
+h2::after {
+  right: calc(50% - 6em);
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h3::before, h3::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  width: 25px;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 18px solid #b8aec7;
+}
+
+h3::before {
+  left: calc(50% - 7em);
+}
+
+h3::after {
+  right: calc(50% - 7em);
+}
+
+.participation h3::before, .benefits h3::before, .requirements h3::before, .sidebar h3::before {
+  left: calc(50% - 5em);
+}
+.participation h3::after, .benefits h3::after, .requirements h3::after, .sidebar h3::after {
+  right: calc(50% - 5em);
+}
+
+div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.summary {
+  max-width: 800px;
+}
+.summary a::after {
+  font-family: "Font Awesome 5 Free";
+  content: " ";
+  font-weight: 900;
+}
+
+p {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+a[href^=http]::after {
+  font-family: "Font Awesome 5 Free";
+  content: " ";
+  font-weight: 900;
+}
+
+@media screen and (max-width: 390px) {
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.7em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
