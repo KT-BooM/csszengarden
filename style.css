@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f3;
+}
+
+h1 {
+  font-family: Impact, fantasy;
+  text-align: center;
+  font-size: 2em;
+  position: relative;
+}
+
+h1::before {
+  content: "";
+  background-color: #b8aec7;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(50% - 4em);
+}
+
+h1::after {
+  content: "";
+  background-color: #b8aec7;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: calc(50% - 4em);
+}
+
+/*# sourceMappingURL=style.css.map */

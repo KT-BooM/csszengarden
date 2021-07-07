@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$clr-bg: hsl(240, 6%, 95%);
+$ff-fantasy: Impact, fantasy;
+$ff-handwriting: 'Brush Script MT', cursive;
+body {
+    background-color: $clr-bg;
+}
+
+h1 {
+    font-family: $ff-fantasy;
+    text-align: center;
+    font-size: 2em;
+    position: relative;
+}
+
+h1::before{
+    content: "";
+    background-color: hsl(264, 18%, 73%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 4em); 
+}
+h1::after{
+    content: "";
+    background-color: hsl(264, 18%, 73%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: calc(50% - 4em); 
+}
