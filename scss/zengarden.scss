@@ -101,7 +101,7 @@ div {
     margin: 0 auto;
 }
 
-p {
+p, a, li {
     font-family: $ff-comic;
 }
 
@@ -228,7 +228,91 @@ abbr {
         }
     }
 }
-
+footer {
+    text-align: center;
+    a {
+        padding: 0.3em;
+        &:hover {
+            border: 2px solid $clr-obj-primary;
+            border-radius: 4px;
+            background-color: $clr-bg-hover;
+            color: $clr-link-hover;
+            
+        }
+    }
+}
+ul {
+    list-style: none;
+    padding: 0;  
+}
+.design-selection{
+    
+    li {
+        background-color: $clr-obj-primary;
+        margin: .2em auto;
+        padding: .25em 0 .5em 1em;
+        width: 50%;
+        min-width: 370px;
+        position: relative;
+        border-radius: 3px;
+        &::before ,&::after{
+            content: "";
+            top: 0;
+            bottom: 0;
+            border-top: 17px solid transparent;
+            border-bottom: 17px solid transparent; 
+            position: absolute;
+        }
+        &::before {
+            left: -14px;
+            border-right:15px solid $clr-obj-primary;
+        }
+        &::after {
+            right: -1px;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            border-right:10px solid $clr-bg;    
+        }
+        &:hover {
+            background-color: $clr-bg-hover;
+            color: $clr-text-hover;
+            transform: translateX(1em);
+            transition: ease-out .2s;
+            a {
+                color: $clr-link-hover;
+            }
+            &::before {
+                border-right:15px solid $clr-bg-hover;
+            }
+        }
+    }
+}
+.design-name {
+    &::after {
+        content: ' \f007';
+    }
+}
+.design-archives {
+    
+    ul {
+        margin: 0 auto;
+        width: 70%;
+        min-width: 370px;
+        display: flex;
+        justify-content: space-between;
+    }
+    li {
+        background-color: $clr-bg-hover;
+        padding: 0.25em 1em;
+        border-radius: 4px;
+        a {
+            color: $clr-link-hover;;
+        }
+    }
+}
+.zen-resources {
+    text-align: center;
+}
 
 
 

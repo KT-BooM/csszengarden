@@ -104,7 +104,7 @@ div {
   margin: 0 auto;
 }
 
-p {
+p, a, li {
   font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
@@ -221,6 +221,88 @@ abbr {
 }
 .requirements:hover::after {
   background-color: white;
+}
+
+footer {
+  text-align: center;
+}
+footer a {
+  padding: 0.3em;
+}
+footer a:hover {
+  border: 2px solid #b8aec7;
+  border-radius: 4px;
+  background-color: #363849;
+  color: #e3af72;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.design-selection li {
+  background-color: #b8aec7;
+  margin: 0.2em auto;
+  padding: 0.25em 0 0.5em 1em;
+  width: 50%;
+  min-width: 370px;
+  position: relative;
+  border-radius: 3px;
+}
+.design-selection li::before, .design-selection li::after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  position: absolute;
+}
+.design-selection li::before {
+  left: -14px;
+  border-right: 15px solid #b8aec7;
+}
+.design-selection li::after {
+  right: -1px;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 10px solid #f1f1f3;
+}
+.design-selection li:hover {
+  background-color: #363849;
+  color: white;
+  transform: translateX(1em);
+  transition: ease-out 0.2s;
+}
+.design-selection li:hover a {
+  color: #e3af72;
+}
+.design-selection li:hover::before {
+  border-right: 15px solid #363849;
+}
+
+.design-name::after {
+  content: " ";
+}
+
+.design-archives ul {
+  margin: 0 auto;
+  width: 70%;
+  min-width: 370px;
+  display: flex;
+  justify-content: space-between;
+}
+.design-archives li {
+  background-color: #363849;
+  padding: 0.25em 1em;
+  border-radius: 4px;
+}
+.design-archives li a {
+  color: #e3af72;
+}
+
+.zen-resources {
+  text-align: center;
 }
 
 @media screen and (max-width: 390px) {
