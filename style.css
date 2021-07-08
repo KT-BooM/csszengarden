@@ -33,25 +33,19 @@ h1 {
   font-size: 2em;
   position: relative;
 }
-
-h1::before {
+h1::before, h1::after {
   content: "";
   background-color: #b8aec7;
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
   width: calc(50% - 4em);
 }
-
+h1::before {
+  left: 0;
+}
 h1::after {
-  content: "";
-  background-color: #b8aec7;
-  position: absolute;
-  top: 0;
-  bottom: 0;
   right: 0;
-  width: calc(50% - 4em);
 }
 
 h2, h3 {
@@ -63,7 +57,6 @@ h2, h3 {
 h2 {
   font-size: 2em;
 }
-
 h2::before, h2::after {
   content: "";
   position: absolute;
@@ -73,11 +66,9 @@ h2::before, h2::after {
   background-color: #b8aec7;
   border-radius: 50%;
 }
-
 h2::before {
   left: calc(50% - 6em);
 }
-
 h2::after {
   right: calc(50% - 6em);
 }
@@ -85,7 +76,6 @@ h2::after {
 h3 {
   font-size: 1.5em;
 }
-
 h3::before, h3::after {
   content: "";
   position: absolute;
@@ -95,11 +85,9 @@ h3::before, h3::after {
   border-right: 18px solid transparent;
   border-top: 18px solid #b8aec7;
 }
-
 h3::before {
   left: calc(50% - 7em);
 }
-
 h3::after {
   right: calc(50% - 7em);
 }
@@ -123,7 +111,6 @@ p {
 a {
   text-decoration: none;
 }
-
 a::after {
   content: "";
   font-family: "Font Awesome 5 Free";
@@ -132,6 +119,10 @@ a::after {
 
 a[href^=http]::after {
   content: " ";
+}
+
+a[href$=".css"]::after, a[href$=index]::after {
+  content: " ";
 }
 
 abbr {
@@ -143,9 +134,6 @@ abbr {
   border: 0.2em solid #b8aec7;
   border-radius: 4px;
   padding: 0 1em;
-}
-.summary a::after {
-  content: " ";
 }
 .summary:hover {
   color: white;
@@ -162,6 +150,7 @@ abbr {
   margin: 0 auto;
   break-inside: avoid-column;
   min-height: 200px;
+  min-width: 100px;
   padding: 0.5em;
   border: 0.2em solid #b8aec7;
   border-radius: 4px;
@@ -180,6 +169,58 @@ abbr {
 
 .explanation {
   columns: 2;
+}
+
+.benefits p {
+  padding: 1em;
+  border-radius: 4px;
+  border: 0.2em solid #b8aec7;
+}
+.benefits p:hover {
+  color: white;
+  background-color: #363849;
+}
+
+.requirements {
+  position: relative;
+  margin-bottom: 2em;
+}
+.requirements p {
+  padding: 0.3em 1em;
+}
+.requirements::before {
+  content: "";
+  position: absolute;
+  top: 2.5em;
+  bottom: 0em;
+  right: 0.5em;
+  left: -0.5em;
+  background-color: white;
+  z-index: -1;
+  border-radius: 4px;
+}
+.requirements::after {
+  content: "";
+  position: absolute;
+  top: 3.5em;
+  bottom: -1em;
+  right: -0.5em;
+  left: 0.5em;
+  background-color: #363849;
+  z-index: -5;
+  border-radius: 4px;
+}
+.requirements:hover p {
+  color: white;
+}
+.requirements:hover a {
+  color: #e3af72;
+}
+.requirements:hover::before {
+  background-color: #363849;
+}
+.requirements:hover::after {
+  background-color: white;
 }
 
 @media screen and (max-width: 390px) {
