@@ -3,6 +3,9 @@ $ff-fantasy: Impact, fantasy;
 $ff-handwriting: 'Brush Script MT', cursive;
 $ff-comic: Comic Sans MS, Comic Sans, cursive;
 $clr-bg: hsl(240, 6%, 95%);
+$clr-bg-hover: hsl(234, 15%, 25%);
+$clr-text-hover: hsl(234, 0%, 100%);
+$clr-link-hover: hsl(32, 67%, 67%);
 $clr-obj-primary: hsl(264, 18%, 73%);
 *,
 *::before,
@@ -95,29 +98,78 @@ div {
     margin: 0 auto;
 }
 
-.summary {
-    
-    @extend .fas;
-    max-width: 800px;
-    a::after {
-        font-family: 'Font Awesome 5 Free';
-        content: ' \f019';
-        font-weight: 900;
-        
-    }
-}
-
 p {
     font-family: $ff-comic;
     
 }
-a[href^="http"]::after {
+
+a {
+    text-decoration: none;
+}
+a::after {
+    content: "";
     font-family: 'Font Awesome 5 Free';
-    content: ' \f35d';
     font-weight: 900;
-    
 }
 
+a[href^="http"]::after {
+    content: ' \f35d'; 
+}
+
+abbr {
+    text-decoration: none;
+}
+
+.summary {
+    max-width: 800px;
+    border: .2em solid $clr-obj-primary;
+    border-radius: 4px;
+    padding: 0 1em;
+
+    a::after {
+        content: ' \f019';
+    }
+}
+.summary:hover , p:hover{
+    color: $clr-text-hover;
+    background-color: $clr-bg-hover;
+
+    a, a::after {
+        color: $clr-link-hover;
+    }
+}
+
+.preamble, .participation, .explanation{
+
+    h3 {
+        column-span: all;
+        
+    }
+    p { 
+        margin: 0 auto;
+        break-inside: avoid-column;
+        min-height: 200px;
+        padding: .5em;
+        border: .2em solid $clr-obj-primary;
+        border-radius: 4px;
+    }
+    // p:hover{
+    //     color: $clr-text-hover;
+    //     background-color: $clr-bg-hover;
+    //     transform: translateY(-50%);
+        
+        
+    // }
+  }
+
+.preamble, .participation {
+    columns: 3;
+}
+.explanation {
+    columns: 2;
+}
+  
+  
 
 
 @media screen and (max-width: 390px) {

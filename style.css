@@ -12,8 +12,7 @@
   src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg");
 }
 .fa,
-.fas,
-.summary {
+.fas {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
@@ -117,23 +116,64 @@ div {
   margin: 0 auto;
 }
 
-.summary {
-  max-width: 800px;
-}
-.summary a::after {
-  font-family: "Font Awesome 5 Free";
-  content: " ";
-  font-weight: 900;
-}
-
 p {
   font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
-a[href^=http]::after {
+a {
+  text-decoration: none;
+}
+
+a::after {
+  content: "";
   font-family: "Font Awesome 5 Free";
-  content: " ";
   font-weight: 900;
+}
+
+a[href^=http]::after {
+  content: " ";
+}
+
+abbr {
+  text-decoration: none;
+}
+
+.summary {
+  max-width: 800px;
+  border: 0.2em solid #b8aec7;
+  border-radius: 4px;
+  padding: 0 1em;
+}
+.summary a::after {
+  content: " ";
+}
+
+.summary:hover, p:hover {
+  color: white;
+  background-color: #363849;
+}
+.summary:hover a, .summary:hover a::after, p:hover a, p:hover a::after {
+  color: #e3af72;
+}
+
+.preamble h3, .participation h3, .explanation h3 {
+  column-span: all;
+}
+.preamble p, .participation p, .explanation p {
+  margin: 0 auto;
+  break-inside: avoid-column;
+  min-height: 200px;
+  padding: 0.5em;
+  border: 0.2em solid #b8aec7;
+  border-radius: 4px;
+}
+
+.preamble, .participation {
+  columns: 3;
+}
+
+.explanation {
+  columns: 2;
 }
 
 @media screen and (max-width: 390px) {
