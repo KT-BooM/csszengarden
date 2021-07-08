@@ -147,12 +147,11 @@ abbr {
 .summary a::after {
   content: " ";
 }
-
-.summary:hover, p:hover {
+.summary:hover {
   color: white;
   background-color: #363849;
 }
-.summary:hover a, .summary:hover a::after, p:hover a, p:hover a::after {
+.summary:hover a, .summary:hover a::after {
   color: #e3af72;
 }
 
@@ -166,6 +165,13 @@ abbr {
   padding: 0.5em;
   border: 0.2em solid #b8aec7;
   border-radius: 4px;
+}
+.preamble p:hover, .participation p:hover, .explanation p:hover {
+  color: white;
+  background-color: #363849;
+}
+.preamble p:hover a, .preamble p:hover a::after, .participation p:hover a, .participation p:hover a::after, .explanation p:hover a, .explanation p:hover a::after {
+  color: #e3af72;
 }
 
 .preamble, .participation {

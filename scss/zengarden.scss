@@ -129,13 +129,13 @@ abbr {
     a::after {
         content: ' \f019';
     }
-}
-.summary:hover , p:hover{
-    color: $clr-text-hover;
-    background-color: $clr-bg-hover;
-
-    a, a::after {
-        color: $clr-link-hover;
+    &:hover {
+        color: $clr-text-hover;
+        background-color: $clr-bg-hover;
+        
+        a, a::after {
+            color: $clr-link-hover;
+        }
     }
 }
 
@@ -152,14 +152,17 @@ abbr {
         padding: .5em;
         border: .2em solid $clr-obj-primary;
         border-radius: 4px;
+
+        &:hover {
+            color: $clr-text-hover;
+            background-color: $clr-bg-hover;
+            
+            a, a::after {
+                color: $clr-link-hover;
+            }
+        }
     }
-    // p:hover{
-    //     color: $clr-text-hover;
-    //     background-color: $clr-bg-hover;
-    //     transform: translateY(-50%);
-        
-        
-    // }
+    
   }
 
 .preamble, .participation {
