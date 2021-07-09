@@ -62,7 +62,7 @@ h2::before, h2::after {
   position: absolute;
   top: 20%;
   bottom: 20%;
-  width: 25px;
+  width: 2%;
   background-color: #b8aec7;
   border-radius: 50%;
 }
@@ -149,7 +149,6 @@ abbr {
 .preamble p, .participation p, .explanation p {
   margin: 0 auto;
   break-inside: avoid-column;
-  min-height: 200px;
   min-width: 100px;
   padding: 0.5em;
   border: 0.2em solid #b8aec7;
@@ -225,6 +224,7 @@ abbr {
 
 footer {
   text-align: center;
+  margin-top: 2em;
 }
 footer a {
   padding: 0.3em;
@@ -254,9 +254,9 @@ ul {
   content: "";
   top: 0;
   bottom: 0;
-  border-top: 17px solid transparent;
-  border-bottom: 17px solid transparent;
   position: absolute;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
 }
 .design-selection li::before {
   left: -14px;
@@ -264,8 +264,6 @@ ul {
 }
 .design-selection li::after {
   right: -1px;
-  border-top: 16px solid transparent;
-  border-bottom: 16px solid transparent;
   border-right: 10px solid #f1f1f3;
 }
 .design-selection li:hover {
@@ -305,17 +303,386 @@ ul {
   text-align: center;
 }
 
-@media screen and (max-width: 390px) {
+/*------------Responsive------------*/
+@media screen and (max-width: 2561px) {
+  h1 {
+    font-size: 5em;
+  }
+
+  h2 {
+    font-size: 4.5em;
+  }
+  h2::before, h2::after {
+    width: 50px;
+  }
+
+  p, li, footer {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 4em;
+  }
+  h3::before, h3::after {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid #b8aec7;
+  }
+
+  .summary {
+    border-width: 0.5em;
+  }
+
+  .preamble p {
+    height: 550px;
+  }
+
+  .explanation p {
+    height: 715px;
+  }
+
+  .participation p {
+    height: 1000px;
+  }
+
+  .requirements::before {
+    top: 5.5em;
+    left: -1em;
+    right: 1em;
+  }
+  .requirements::after {
+    top: 7.5em;
+    left: 1em;
+    right: -1em;
+    bottom: -2em;
+  }
+
+  .design-selection li {
+    width: 65%;
+  }
+  .design-selection li::before, .design-selection li::after {
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+  }
+  .design-selection li::before {
+    left: -32px;
+    border-right: 35px solid #b8aec7;
+  }
+  .design-selection li::after {
+    border-right: 30px solid #f1f1f3;
+  }
+  .design-selection li:hover::before {
+    border-right: 35px solid #363849;
+  }
+}
+@media screen and (max-width: 2090px) {
+  h1 {
+    font-size: 4.5em;
+  }
+
+  h2 {
+    font-size: 4em;
+  }
+  h2::before, h2::after {
+    width: 45px;
+  }
+
+  p, li, footer {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 3.5em;
+  }
+
+  .preamble p {
+    height: 490px;
+  }
+
+  .explanation p {
+    height: 580px;
+  }
+
+  .participation p {
+    height: 800px;
+  }
+
+  .design-selection li::before, .design-selection li::after {
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+  }
+  .design-selection li::before {
+    left: -28px;
+    border-right: 30px solid #b8aec7;
+  }
+  .design-selection li::after {
+    border-right: 25px solid #f1f1f3;
+  }
+  .design-selection li:hover::before {
+    border-right: 30px solid #363849;
+  }
+}
+@media screen and (max-width: 1680px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 3.5em;
+  }
+  h2::before, h2::after {
+    width: 40px;
+  }
+
+  p, li, footer {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 3em;
+  }
+
+  .summary {
+    border-width: 0.3em;
+  }
+
+  .preamble p {
+    height: 400px;
+  }
+
+  .explanation p {
+    height: 460px;
+  }
+
+  .participation p {
+    height: 660px;
+  }
+
+  .design-selection li {
+    width: 70%;
+  }
+  .design-selection li::before, .design-selection li::after {
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+  }
+  .design-selection li::before {
+    left: -22px;
+    border-right: 23px solid #b8aec7;
+  }
+  .design-selection li::after {
+    border-right: 18px solid #f1f1f3;
+  }
+  .design-selection li:hover::before {
+    border-right: 23px solid #363849;
+  }
+}
+@media screen and (max-width: 1175px) {
+  h1 {
+    font-size: 3.5em;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+  h2::before, h2::after {
+    width: 35px;
+  }
+
+  p, li, footer {
+    font-size: 1em;
+  }
+
+  h3 {
+    font-size: 2.5em;
+  }
+
+  .summary {
+    border-width: 0.2em;
+  }
+
+  .preamble p {
+    height: 250px;
+  }
+
+  .explanation p {
+    height: 300px;
+  }
+
+  .participation p {
+    height: 420px;
+  }
+
+  .requirements::before {
+    top: 4em;
+    left: -1em;
+    right: 0.5em;
+    bottom: -0.5em;
+  }
+  .requirements::after {
+    top: 5.5em;
+    left: 1em;
+    right: -1em;
+    bottom: -2em;
+  }
+
+  footer {
+    margin-top: 2.5em;
+  }
+
+  .design-selection li {
+    width: 55%;
+    min-width: 400px;
+  }
+  .design-selection li::before, .design-selection li::after {
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+  }
+  .design-selection li::before {
+    left: -14px;
+    border-right: 16px solid #b8aec7;
+  }
+  .design-selection li::after {
+    border-right: 14px solid #f1f1f3;
+  }
+  .design-selection li:hover::before {
+    border-right: 16px solid #363849;
+  }
+}
+@media screen and (max-width: 860px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+  h2::before, h2::after {
+    width: 30px;
+  }
+
+  p, li, footer {
+    font-size: 0.8em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+  h3::before, h3::after {
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid #b8aec7;
+  }
+
+  .summary {
+    border-width: 0.16em;
+  }
+
+  .preamble p {
+    height: 200px;
+  }
+
+  .explanation p {
+    height: 220px;
+  }
+
+  .participation p {
+    height: 320px;
+  }
+
+  footer {
+    margin: 3.5em;
+  }
+
+  .design-selection li {
+    min-width: 320px;
+  }
+  .design-selection li::before, .design-selection li::after {
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+  }
+  .design-selection li::before {
+    left: -10px;
+    border-right: 12px solid #b8aec7;
+  }
+  .design-selection li::after {
+    border-right: 12px solid #f1f1f3;
+  }
+  .design-selection li:hover::before {
+    border-right: 12px solid #363849;
+  }
+}
+@media screen and (max-width: 696px) {
+  .preamble, .participation, .explanation {
+    display: grid;
+  }
+  .preamble p, .participation p, .explanation p {
+    margin-top: 0.5em;
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 520px) {
+  h1 {
+    font-size: 2em;
+  }
+
   h2 {
     font-size: 1.5em;
+  }
+  h2::before, h2::after {
+    width: 20px;
+  }
+
+  p, li, footer {
+    font-size: 0.5em;
   }
 
   h3 {
     font-size: 1em;
   }
+  h3::before, h3::after {
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #b8aec7;
+  }
 
-  p {
-    font-size: 0.7em;
+  .summary {
+    border-width: 0.1em;
+  }
+
+  .requirements::before {
+    top: 1.5em;
+    left: -0.5em;
+    right: 0em;
+    bottom: -0.5em;
+  }
+  .requirements::after {
+    top: 2.5em;
+    left: 1em;
+    right: -1em;
+    bottom: -1.5em;
+  }
+
+  .design-selection li {
+    width: 60%;
+    min-width: 200px;
+  }
+  .design-selection li::before, .design-selection li::after {
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+  .design-selection li::before {
+    left: -6px;
+    border-right: 8px solid #b8aec7;
+  }
+  .design-selection li::after {
+    border-right: 8px solid #f1f1f3;
+  }
+  .design-selection li:hover::before {
+    border-right: 8px solid #363849;
+  }
+
+  .design-archives ul {
+    min-width: 200px;
   }
 }
 

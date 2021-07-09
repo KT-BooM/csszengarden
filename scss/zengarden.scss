@@ -1,4 +1,5 @@
 @import "solid.scss";
+
 $ff-fantasy: Impact, fantasy;
 $ff-handwriting: 'Brush Script MT', cursive;
 $ff-comic: Comic Sans MS, Comic Sans, cursive;
@@ -7,6 +8,37 @@ $clr-bg-hover: hsl(234, 15%, 25%);
 $clr-text-hover: hsl(234, 0%, 100%);
 $clr-link-hover: hsl(32, 67%, 67%);
 $clr-obj-primary: hsl(264, 18%, 73%);
+
+$triangle-sizes: (
+    "default": 18px solid,
+    "small": 12px solid,
+    "big": 30px solid,
+
+);
+$name-bar-sizes: (
+    "default": 16px solid,
+    "default-be4": 15px solid,
+    "default-after": 10px solid,
+    "2560":  40px solid,
+    "2560-be4":  35px solid,
+    "2560-after":  30px solid,
+    "2090":  35px solid,
+    "2090-be4":  30px solid,
+    "2090-after":  25px solid,
+    "1680":  26px solid,
+    "1680-be4":  23px solid,
+    "1680-after":  18px solid,
+    "1175":  18px solid,
+    "1175-be4":  16px solid,
+    "1175-after":  14px solid,
+    "860":  14px solid,
+    "860-be4":  12px solid,
+    "860-after":  12px solid,
+    "520":  8px solid,
+    "520-be4":  8px solid,
+    "520-after":  8px solid,
+); 
+
 *,
 *::before,
 *::after {
@@ -52,7 +84,7 @@ h2 {
         position: absolute;
         top: 20%;
         bottom: 20%;
-        width: 25px;
+        width: 2%;
         background-color: $clr-obj-primary;
         border-radius: 50%;    
     }
@@ -71,9 +103,9 @@ h3{
         position: absolute;
         top: 15%;
         width: 25px;
-        border-left: 18px solid transparent;
-        border-right: 18px solid transparent;
-        border-top: 18px solid $clr-obj-primary;    
+        border-left: map-get($triangle-sizes, "default") transparent;
+        border-right: map-get($triangle-sizes, "default") transparent;
+        border-top: map-get($triangle-sizes, "default") $clr-obj-primary;    
     }
     &::before {
         left: calc(50% - 7em);
@@ -149,7 +181,6 @@ abbr {
     p { 
         margin: 0 auto;
         break-inside: avoid-column;
-        min-height: 200px;
         min-width: 100px;
         padding: .5em;
         border: .2em solid $clr-obj-primary;
@@ -230,6 +261,7 @@ abbr {
 }
 footer {
     text-align: center;
+    margin-top: 2em;
     a {
         padding: 0.3em;
         &:hover {
@@ -259,19 +291,17 @@ ul {
             content: "";
             top: 0;
             bottom: 0;
-            border-top: 17px solid transparent;
-            border-bottom: 17px solid transparent; 
             position: absolute;
+            border-top: map-get($name-bar-sizes, "default") transparent;
+            border-bottom: map-get($name-bar-sizes, "default") transparent; 
         }
         &::before {
             left: -14px;
-            border-right:15px solid $clr-obj-primary;
+            border-right:map-get($name-bar-sizes, "default-be4") $clr-obj-primary;
         }
         &::after {
             right: -1px;
-            border-top: 16px solid transparent;
-            border-bottom: 16px solid transparent;
-            border-right:10px solid $clr-bg;    
+            border-right:map-get($name-bar-sizes, "default-after") $clr-bg;    
         }
         &:hover {
             background-color: $clr-bg-hover;
@@ -314,16 +344,408 @@ ul {
     text-align: center;
 }
 
+/*------------Responsive------------*/
 
-
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 2561px) {
+    
+    h1 {
+        font-size: 5em;
+    }
     h2 {
+        font-size: 4.5em;
+        &::before, &::after {
+            width: 50px;
+        }
+    }
+    p, li, footer {
+        font-size: 2.5em;
+    }
+    h3 {
+        font-size: 4em;
+        &::before, &::after {
+            border-left: map-get($triangle-sizes, "big") transparent;
+            border-right: map-get($triangle-sizes, "big") transparent;
+            border-top: map-get($triangle-sizes, "big") $clr-obj-primary;    
+        }
+    }
+    .summary {
+        border-width: .5em;
+    }
+    .preamble {
+        p {
+            height: 550px;
+        }
+    }
+    .explanation {
+        p {
+            height: 715px;
+        }
+    }
+    .participation {
+        p {
+            height: 1000px;
+        }
+    }
+    .requirements {
+        &::before{
+            top: 5.5em;
+            left: -1em;
+            right: 1em;
+        }
+        &::after {
+            top: 7.5em;
+            left: 1em;
+            right: -1em;
+            bottom: -2em;
+        } 
+    }
+    .design-selection {
+        li {
+            width: 65%;
+            &::before, &::after {
+                border-top: map-get($name-bar-sizes, "2560") transparent;
+                border-bottom: map-get($name-bar-sizes, "2560") transparent; 
+            }
+            &::before {
+                left: -32px;
+                border-right: map-get($name-bar-sizes, "2560-be4") $clr-obj-primary; 
+               
+            }
+            &::after {
+                border-right: map-get($name-bar-sizes, "2560-after") $clr-bg; 
+            }
+            &:hover {
+                &::before{
+                    border-right: map-get($name-bar-sizes, "2560-be4") $clr-bg-hover;
+                }
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 2090px){
+    h1 {
+        font-size: 4.5em;
+    }
+    h2 {
+        font-size: 4em;
+        &::before, &::after {
+            width: 45px;
+        }
+    }
+    p, li, footer {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 3.5em;
+        
+    }
+    .preamble {
+        p {
+            height: 490px;
+        }
+    }
+    .explanation {
+        p {
+            height: 580px;
+        }
+    }
+    .participation {
+        p {
+            height: 800px;
+        }
+    }
+
+    .design-selection {
+        li {
+            &::before, &::after {
+                border-top: map-get($name-bar-sizes, "2090") transparent;
+                border-bottom: map-get($name-bar-sizes, "2090") transparent; 
+            }
+            &::before {
+                left: -28px;
+                border-right: map-get($name-bar-sizes, "2090-be4") $clr-obj-primary; 
+            }
+            &::after {
+                border-right: map-get($name-bar-sizes, "2090-after") $clr-bg; 
+            }
+            &:hover {
+                &::before{
+                    border-right: map-get($name-bar-sizes, "2090-be4") $clr-bg-hover;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1680px) {
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 3.5em;
+        &::before, &::after {
+            width: 40px;
+        }
+    }
+    p, li, footer {
         font-size: 1.5em;
     }
     h3 {
+        font-size: 3em;
+    }
+    .summary {
+        border-width: .3em;
+    }
+    .preamble {
+        p {
+            height: 400px;
+        }
+    }
+    .explanation {
+        p {
+            height: 460px;
+        }
+    }
+    .participation {
+        p {
+            height: 660px;
+        }
+    }
+    .design-selection {
+        li {
+            width: 70%;
+            &::before, &::after {
+                border-top: map-get($name-bar-sizes, "1680") transparent;
+                border-bottom: map-get($name-bar-sizes, "1680") transparent; 
+            }
+            &::before {
+                left: -22px;
+                border-right: map-get($name-bar-sizes, "1680-be4") $clr-obj-primary; 
+            }
+            &::after {
+                border-right: map-get($name-bar-sizes, "1680-after") $clr-bg; 
+            }
+            &:hover {
+                &::before{
+                    border-right: map-get($name-bar-sizes, "1680-be4") $clr-bg-hover;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1175px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    h2 {
+        font-size: 3em;
+        &::before, &::after {
+            width: 35px;
+        }
+    }
+    p, li, footer {
         font-size: 1em;
     }
-    p {
-        font-size: .7em;
+    h3 {
+        font-size: 2.5em;
+    }
+    .summary {
+        border-width: .2em;
+    }
+    .preamble {
+        p {
+            height: 250px;
+        }
+    }
+    .explanation {
+        p {
+            height: 300px;
+        }
+    }
+    .participation {
+        p {
+            height: 420px;
+        }
+    }
+    .requirements {
+        &::before{
+            top: 4em;
+            left: -1em;
+            right: .5em;
+            bottom: -.5em;
+        }
+        &::after {
+            top: 5.5em;
+            left: 1em;
+            right: -1em;
+            bottom: -2em;
+        } 
+    }
+    footer {
+        margin-top: 2.5em;
+    }
+    .design-selection {
+        li {
+            width: 55%;
+            min-width: 400px;
+            &::before, &::after {
+                border-top: map-get($name-bar-sizes, "1175") transparent;
+                border-bottom: map-get($name-bar-sizes, "1175") transparent; 
+            }
+            &::before {
+                left: -14px;
+                border-right: map-get($name-bar-sizes, "1175-be4") $clr-obj-primary; 
+            }
+            &::after {
+                border-right: map-get($name-bar-sizes, "1175-after") $clr-bg; 
+            }
+            &:hover {
+                &::before{
+                    border-right: map-get($name-bar-sizes, "1175-be4") $clr-bg-hover;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 860px) {
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2.5em;
+        &::before, &::after {
+            width: 30px;
+        }
+    }
+    p, li, footer {
+        font-size: .8em;
+    }
+    h3 {
+        font-size: 2em;
+        &::before, &::after {
+            border-left: map-get($triangle-sizes, "default") transparent;
+            border-right: map-get($triangle-sizes, "default") transparent;
+            border-top: map-get($triangle-sizes, "default") $clr-obj-primary;    
+        }
+    }
+    .summary {
+        border-width: .16em;
+    }
+    .preamble{
+        p {
+            height: 200px;
+        }
+    }
+    
+    .explanation {
+        p {
+            height: 220px;
+        }
+    }
+    .participation {
+        p {
+            height: 320px;
+        }
+    }
+    footer {
+        margin: 3.5em;
+    }
+    .design-selection {
+        li {
+            
+            min-width: 320px;
+            &::before, &::after {
+                border-top: map-get($name-bar-sizes, "860") transparent;
+                border-bottom: map-get($name-bar-sizes, "860") transparent; 
+            }
+            &::before {
+                left: -10px;
+                border-right: map-get($name-bar-sizes, "860-be4") $clr-obj-primary; 
+            }
+            &::after {
+                border-right: map-get($name-bar-sizes, "860-after") $clr-bg; 
+            }
+            &:hover {
+                &::before{
+                    border-right: map-get($name-bar-sizes, "860-be4") $clr-bg-hover;
+                }
+            }
+        }
+    }
+}    
+@media screen and (max-width: 696px) {
+    .preamble, .participation, .explanation{
+        display: grid;
+        p {
+            margin-top: .5em;
+            height: fit-content;
+        }
+    }
+    
+}
+@media screen and (max-width: 520px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+        &::before, &::after {
+            width: 20px;
+        }
+    }
+    p, li, footer {
+        font-size: .5em;
+    }
+    h3 {
+        font-size: 1em;
+        &::before, &::after {
+            border-left: map-get($triangle-sizes, "small") transparent;
+            border-right: map-get($triangle-sizes, "small") transparent;
+            border-top: map-get($triangle-sizes, "small") $clr-obj-primary;    
+        }
+    }
+    .summary {
+        border-width: .1em;
+    }
+    .requirements {
+        &::before{
+            top: 1.5em;
+            left: -.5em;
+            right: 0em;
+            bottom: -.5em;
+        }
+        &::after {
+            top: 2.5em;
+            left: 1em;
+            right: -1em;
+            bottom: -1.5em;
+        } 
+    }
+    .design-selection {
+        li {
+            width: 60%;
+            min-width: 200px;
+            &::before, &::after {
+                border-top: map-get($name-bar-sizes, "520") transparent;
+                border-bottom: map-get($name-bar-sizes, "520") transparent; 
+            }
+            &::before {
+                left: -6px;
+                border-right: map-get($name-bar-sizes, "520-be4") $clr-obj-primary; 
+            }
+            &::after {
+                border-right: map-get($name-bar-sizes, "520-after") $clr-bg; 
+            }
+            &:hover {
+                &::before{
+                    border-right: map-get($name-bar-sizes, "520-be4") $clr-bg-hover;
+                }
+            }
+        }
+    }
+    .design-archives {
+        ul {
+            min-width: 200px;
+        }
     }
 }
